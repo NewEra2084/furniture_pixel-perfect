@@ -1,0 +1,44 @@
+@mixin fontM($color, $size){
+	color: $color;
+	font-family: Montserrat;
+	font-style: normal;
+	font-size: $size;
+	line-height: 120%;
+	@content;
+}
+
+@mixin description($width){
+	position: relative;
+	top: 30.125rem - 7.0625rem;
+	background-color: #202020;
+	width: $width;
+	height: 7.0625rem;
+}
+
+@mixin description__inside{
+	.badge-description__wrapper{
+		display: flex;
+		width: 49.875rem - (4.74rem + 4.8rem);
+		justify-content: space-between;
+	}
+	
+	.badge_text1{
+		@include fontM(#FFF, 1.5rem){
+			letter-spacing: -0.027rem;
+			font-weight: 600;
+		}
+		margin-top: 1.5rem;
+	}
+	
+	.badge_text2{
+		@include fontM(#FFB90E,1.25rem){
+			font-weight: 700;
+		}
+		margin-top: 0.75rem;
+	}
+	
+	.stars{
+		margin-top: 1.81rem;
+	}
+	@content;
+}
